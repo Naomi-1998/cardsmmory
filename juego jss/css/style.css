@@ -1,0 +1,145 @@
+body {
+  min-height: 100vh;
+  min-width: 100vh;
+  background-color: #12181f;
+  color: white;
+}
+
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+p {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+}
+
+.actions button {
+    padding: 8px 16px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: #27ae60;
+    color: white;
+}
+
+.grid-container {
+  display: grid;
+  justify-content: center;
+  grid-gap: 16px;
+  grid-template-columns: repeat(6, 100px);
+  grid-template-rows: repeat(2, calc(100px / 2 * 3));
+  margin-left: 200px;
+  margin-top: 20px; 
+}
+
+.card {
+  height: calc(100px / 2 * 3);
+  width: 100px; 
+  border-radius: 10px; /* Reduce el valor del border-radius */
+  background-color: white;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.4s ease-in-out;
+  margin-top: -450px;
+  /* Ajusta el tamaño del fondo al tamaño de las cartas */
+  background-size: 100% 100%;
+}
+
+.front-image {
+  width: 40px; 
+  height: 40px; 
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+
+.front, .back {
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 10px; /* Reduce el valor del border-radius */
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.card .front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+
+}
+
+.card .back {
+  background-image: url(./../img/back1.png);
+  background-position: center center;
+  background-size: cover;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  transform: rotateY(180deg);
+}
+.container {
+  display: flex;
+}
+
+.left-panel {
+  color: black;
+  margin: 20px;
+  padding: 10px;
+  background-color: #918f91;
+  text-align: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px; 
+  
+}
+
+.right-panel {
+  text-align: center;
+}
+
+.timer, .hi, .score {
+  color: black;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid #000;
+  background-color: #eeeeee;
+  border-radius: 0px;
+  box-sizing: border-box;
+}
+
+.boton button {
+  background-color: #27ae60; /* Color de fondo verde */
+  color: rgb(0, 0, 0); /* Color del texto blanco para mayor contraste */
+  padding: 9px 10px; /* Ajusta el espaciado interno según tus preferencias */
+  font-size: 16px; /* Ajusta el tamaño de la fuente según tus preferencias */
+  border: none; /* Elimina el borde del botón */
+  border-radius: 5px; /* Agrega bordes redondeados */
+  margin: 5px; /* Ajusta el margen entre los botones según tus preferencias */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s; /* Agrega una transición suave al color de fondo */
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  border-width: 1px;
+}
+
+.boton button:hover {
+  background-color: #219653; /* Cambia el color de fondo al pasar sobre el botón */
+}

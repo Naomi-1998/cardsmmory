@@ -1,0 +1,215 @@
+* {
+    padding: 20px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #12181f;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido del cuerpo */
+    align-items: center; /* Centra verticalmente el contenido del cuerpo */
+    height: 100vh; /* Ajusta el alto del cuerpo al 100% de la ventana visible */
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Agrega una fuente de texto */
+}
+
+#linea-boton {
+    display: flex;
+    justify-content: flex-start; /* Alinea los elementos en la parte izquierda */
+    align-items: flex-start; /* Alinea los elementos en la parte superior */
+    margin-top: -250px; /* Ajusta este valor para subir más los botones */
+    margin-right: 60px; /* Ajusta este valor para mover la línea a la izquierda */
+}
+
+#linea-boton button {
+    margin: 0 5px; /* Ajusta el espacio entre los botones */
+    padding: 6px 10px; /* Ajusta el relleno interno de los botones */
+    font-size: 12px; /* Ajusta el tamaño del texto */
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border: 2px solid #00cccc;
+    border-radius: 5px; /* Ajusta el redondeo de las esquinas */
+    cursor: pointer;
+    background-color: #00cccc;
+}
+
+.board {
+    position: relative;
+    width: 812px;
+    height: 844px;
+    top: 100px;
+    right: 20px; /* Ajusta este valor para mover las cartas a la izquierda */
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    background: linear-gradient(133.05deg, rgba(0, 0, 0, 0.6) 0.62%, rgba(255, 255, 255, 0.1) 102.4%);
+    border-radius: 8px; 
+}
+
+        
+.card {
+    width: calc(26% - 60px); /* Ajusta el ancho de las cartas */
+    height: calc(24% - 20px); /* Ajusta la altura de las cartas */
+    position: relative;
+    margin: -16px 0 0 -16px; /* Ajusta estos valores para cambiar el espacio en la parte superior e izquierda de cada carta */
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    border-radius: 15px; /* Ajusta el valor para curvar la parte frontal de las cartas */
+}
+
+.card:active{
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.card.flip{
+    transform: rotateY(180deg);
+}
+
+.bb{ /*front face and back face*/
+    backface-visibility: hidden;
+    position: absolute;
+    border-radius: 15px; /* Reduce el valor del border-radius */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.ff{
+    backface-visibility: hidden;
+    position: absolute;
+    border-radius: 15px; /* Reduce el valor del border-radius */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.card .ff {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+  
+  }
+
+.ff{
+    transform: rotateY(180deg);
+}
+
+.Memory{
+    position: absolute;
+    width: 182px;
+    height: 40px;
+    left: 535px;
+    top: 32px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40.187px;
+    line-height: 40px;
+    letter-spacing: 0.0882153px;
+    color: #FFFFFF;
+}
+
+
+
+.restartbutton:active, .exitbutton:active{
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.Player1, .Player2 {
+    position: relative;
+    width: 100%;
+    height: 36px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    top: -22px;
+}
+
+
+.frame169 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    position: absolute;
+    width: 180px;
+    height: 150px;
+    left: 50px;
+    top: 240px; /* Ajusta este valor para subir las letras */
+    background: linear-gradient(160.65deg, rgba(0, 0, 0, 0.6) 0.74%, rgba(0, 0, 0, 0.1) 102.03%);
+    border-radius: 8px;
+}
+
+.frame170 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    position: absolute;
+    width: 180px;
+    height: 150px;
+    left: 50px;
+    top: 410px; /* Ajusta este valor para subir las letras */
+    background: linear-gradient(160.65deg, rgba(0, 0, 0, 0.6) 0.74%, rgba(0, 0, 0, 0.1) 102.03%);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.3)
+}
+
+
+.Player1-turn {
+    background-color: rgba(255, 0, 0, 0.7); /* Fondo durante el turno del jugador 1 */
+}
+
+.Player2-turn {
+    background-color: rgba(0, 255, 0, 0.7); /* Fondo durante el turno del jugador 2 */
+}
+
+#winner-message {
+    position: absolute;
+    top: 100px;
+    left: 150px;
+    transform: translate(-50%, -50%);
+    background-color: #12181f;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: rgb(165, 238, 165);
+    font-size: 40px;
+}
+
+.hidden {
+    display: none;
+    background-color: #f44336;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#timer {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: -500px; /* Ajusta este valor para moverlo hacia arriba */
+    margin-left: 30px; /* Ajusta este valor para moverlo hacia la derecha */
+    border: 2px solid #ffffff; /* Color del borde */
+    padding: 10px; /* Relleno dentro del cuadro */
+    display: inline-block; /* Para que el borde envuelva el contenido */
+    position: absolute; /* Cambia la posición a absoluta */
+    right: 30px; /* Ajusta este valor para moverlo hacia la derecha */
+}

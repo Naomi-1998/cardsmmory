@@ -1,0 +1,45 @@
+
+<!-- Tu HTML modificado -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Memory Game</title>
+</head>
+<body>
+
+  <p>Welcome, <span id="displayUsername"></span></p>
+
+  <div class="container">
+      <div class="left-panel">
+        <div class="boton">
+        <button onclick="startGame()">Start Game</button>
+        <button onclick="restart()">Restart Game</button>
+      </div>
+
+    <div class="score">Score: <span id="score">0</span></div>
+    <div class="timer">Time: <span id="timer">0</span> seconds</div>
+    <div id="highScoresContainer"></div>
+    <h2 class="hi">High Scores</h2>
+    <ul id="highScoresList"></ul>
+    </div>
+  </div>
+  
+
+  <div class="grid-container"></div>
+  <div id="message-container" style="display: none;"></div>
+  <div id="message-container"></div>
+
+  <script src="./js/index6.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const username = localStorage.getItem("username");
+      document.getElementById("displayUsername").textContent = username;
+      // Llamar a displayHighScores al cargar la página
+      displayHighScores();
+    });
+  </script>
+</body>
+</html>

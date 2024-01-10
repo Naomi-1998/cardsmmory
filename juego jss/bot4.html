@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory</title>
+    <link rel="stylesheet" href="bot.css">
+</head>
+<body>
+    <!-- Agrega un elemento para mostrar el temporizador -->
+<div id="timer">Tiempo: 90 segundos</div>
+
+    <div id="winner-message" class="hidden">
+        <p id="winner-text"></p>
+    </div>
+
+    <div id="linea-boton">
+        <button id="startgame">Iniciar Juego</button>
+        <button class="restartbutton" onClick="window.location.reload();">
+            Reiniciar Juego
+        </button>
+        <button class="exitbutton" onclick="window.open('', '_self', ''); window.close();   ">
+            Salir
+        </button>
+    </div>
+    
+    <div class="Memory">
+        <h2>Memory <span id="memoryID"></span></h2>
+        
+        
+    </div>
+    
+    <div class="frame170"> <!--Player 1 scoreboard-->
+        <div class="Player1" data-id="P1">
+            <h2>Player 2</h2>
+            <h2>Score:   <span id="score2"></span></h2>
+        </div>
+    </div>
+
+    <!--Grid with cards--> 
+    <!-- ff = front face, bb = backface-->
+    <section class="board">
+        <!-- Repeat the structure for a total of 3 columns and 6 rows -->
+        <div class="card" data-id="2b">
+            <img class="ff" src="assets/111.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+        <div class="card" data-id="2b">
+            <img class="ff" src="assets/111.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+        <div class="card" data-id="2r">
+            <img class="ff" src="assets/222.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+        <div class="card" data-id="2r">
+            <img class="ff" src="assets/222.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+        <div class="card" data-id="3b">
+            <img class="ff" src="assets/333.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+        <div class="card" data-id="3b">
+            <img class="ff" src="assets/333.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+        <div class="card" data-id="3r">
+            <img class="ff" src="assets/444.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+        <div class="card" data-id="3r">
+            <img class="ff" src="assets/444.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+        <div class="card" data-id="4b">
+            <img class="ff" src="assets/555.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+
+        <div class="card" data-id="4b">
+            <img class="ff" src="assets/555.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+        <div class="card" data-id="4r">
+            <img class="ff" src="assets/666.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+        <div class="card" data-id="4r">
+            <img class="ff" src="assets/666.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+        <div class="card" data-id="5b">
+            <img class="ff" src="assets/777.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+        <div class="card" data-id="5b">
+            <img class="ff" src="assets/777.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+        <div class="card" data-id="5r">
+            <img class="ff" src="assets/888.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+        <div class="card" data-id="5r">
+            <img class="ff" src="assets/888.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+        <div class="card" data-id="6b">
+            <img class="ff" src="assets/000.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+        <div class="card" data-id="6b">
+            <img class="ff" src="assets/000.jpg"/>
+            <img class="bb" src="img/back1.png"/>
+        </div>
+    </section>
+
+    <div class="frame169"> <!--Player 2 scoreboard--> 
+        <div class="Player2" data-id="P2">
+            <h2>Player 1</h2>
+            <h2>Score: <span id="score1"></span></h2>
+        </div>
+    </div>
+    <audio id="flipsound" src="./sound/click.wav"></audio>
+    <audio id="matchsound" src="./sound/sound.wav"></audio>
+    <audio id="winsound" src="./sound/yay.mp3"></audio>
+    <script src="./js/bot4.js"></script>
+</body>
+</html>

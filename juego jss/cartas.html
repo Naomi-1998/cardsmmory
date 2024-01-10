@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de Cartas</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #292929;
+            text-align: center;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #008080; /* Teal */
+        }
+
+        p {
+            color: #666;
+        }
+
+        .container {
+            background-color: black; /* Fondo negro */
+            padding: 20px; /* Espaciado interno */
+            border-radius: 10px; /* Borde redondeado */
+            max-width: 600px; /* Ancho máximo del contenedor */
+            position: relative; /* Para posicionar la luz dentro del contenedor */
+        }
+
+        /* Efecto de luz */
+        .light {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 10px; /* Mismo radio que el contenedor */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Luz blanca */
+            pointer-events: none; /* Permite hacer clic a través del elemento */
+            z-index: -1; /* Detrás del contenido */
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #ddd; /* Fondo gris */
+        }
+
+        .card:hover {
+            transform: scale(1.1);
+        }
+
+        .card img {
+            width: 100px; /* Ajusta el tamaño deseado */
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="light"></div> <!-- Luz luminosa -->
+    <h1>Elige una carta</h1>
+    <p>Selecciona una de las dos cartas haciendo clic en la imagen.</p>
+
+    <div class="card-container">
+        <!-- Las imágenes de las cartas actúan como botones -->
+        <div class="card" onclick="selectCard('card1')">
+            <img src="./img/image.png" alt="Carta 1">
+        </div>
+        <div class="card" onclick="selectCard('card2')">
+            <img src="./img/game.png" alt="Carta 2">
+        </div>
+    </div>
+</div>
+
+<script>
+    function selectCard(cardId) {
+        // Redirige a otra página según la carta seleccionada
+        switch (cardId) {
+            case 'card1':
+                window.location.replace('nivel.html');
+                break;
+            case 'card2':
+                window.location.replace('nivel2.html');
+                break;
+            default:
+                alert('Carta no reconocida');
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="elegir.css">
+    <title>Juego de Memoria con Cartas</title>
+</head>
+<style>body {
+  font-family: 'Arial', sans-serif;
+  background-color: #292929;
+  color: #fff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.welcome-screen {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+  color: #00cccc;
+}
+
+p {
+  color: #ccc;
+}
+
+button {
+  background-color: #00cccc;
+  color: #232121;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #008080;
+}
+
+.hidden {
+  display: none;
+}
+
+
+</style>
+<body>
+    <div id="welcome-screen" class="welcome-screen">
+        <h1>Bienvenido al Juego de Memoria</h1>
+        <p>Selecciona una opción:</p>
+        <button onclick="startGame('solitario')">Jugar en Solitario</button>
+        <button onclick="startGame('multijugador')">Multijugador</button>
+    </div>
+    <div id="game-board" class="hidden"></div>
+
+    <script>
+        function startGame(mode) {
+          // Lógica para determinar la URL según el modo
+          let url;
+          if (mode === 'solitario') {
+            url = 'cartas.html';
+          } else if (mode === 'multijugador') {
+            url = 'cartas2.html'; // Reemplaza 'multijugador.html' con la URL correcta
+          }
+        
+          // Redireccionar a la URL correspondiente
+          window.location.href = url;
+        }
+        </script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enter Username</title>
+</head>
+<body>
+  <h1>Enter Your Username</h1>
+  <form id="usernameForm">
+    <label for="username">Username: </label>
+    <input type="text" id="username" required>
+    <button type="submit">Start Game</button>
+  </form>
+
+  <script>
+    document.getElementById("usernameForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const username = document.getElementById("username").value;
+      localStorage.setItem("username", username);
+      window.location.href = "game.html";
+    });
+  </script>
+</body>
+</html>

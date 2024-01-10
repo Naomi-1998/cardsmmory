@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego de Memoria</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #292929;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #back-button {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      background-color: #008080;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    #game-options {
+      background-color: #000;
+      border: 2px solid #000000;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    }
+
+    h1 {
+      color: #008080;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 12px 24px;
+      margin: 15px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #008080;
+      color: #fff;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #005757;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="game-options">
+    <h1>Selecciona el nivel del juego</h1>
+    <button onclick="startGame('easy')">Fácil</button>
+    <button onclick="startGame('medium')">Medio</button>
+    <button onclick="startGame('hard')">Difícil</button>
+  </div>
+
+  <script>
+    function startGame(level) {
+      // Asignar directamente las URLs a las variables de nivel
+      const easyURL = 'bot.html';
+      const mediumURL = 'bot2.html';
+      const hardURL = 'bot3.html';
+
+      // Redirigir a la página correspondiente según el nivel
+      if (level === 'easy') {
+        window.location.replace(easyURL);
+      } else if (level === 'medium') {
+        window.location.replace(mediumURL);
+      } else if (level === 'hard') {
+        window.location.replace(hardURL);
+      } else {
+        alert('Nivel no reconocido');
+      }
+    }
+  </script>
+</body>
+</html>
+
